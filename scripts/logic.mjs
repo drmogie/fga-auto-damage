@@ -56,17 +56,18 @@ export function decide({ roll, targets, trigger, noTarget }) {
 /** Short one-line note for chat. */
 export function describe(decision, roll, actorName) {
   const total = roll.total;
-  const who = actorName || "Attack";
+  const who = actorName ? `${actorName}: ` : "";
+  const cap = (t) => (who ? t : t.charAt(0).toUpperCase() + t.slice(1));
   if (!decision.results.length) {
-    if (decision.reason === "crit") return `${who}: critical hit (${total}). Rolling damage.`;
-    if (decision.roll) return `${who}: no target picked (${total}). Rolling damage anyway.`;
-    if (decision.reason === "fumble") return `${who}: natural 1, a miss.`;
-    return `${who}: no target picked (${total}). No damage rolled.`;
+    if (decision.reason === "crit") return `${who}${cap("critical hit")} (${total}). Rolling damage.`;
+    if (decision.roll) return `${who}${cap("no target picked")} (${total}). Rolling damage anyway.`;
+    if (decision.reason === "fumble") return `${who}${cap("natural 1, a miss")}.`;
+    return `${who}${cap("no target picked")} (${total}). No damage rolled.`;
   }
   const parts = decision.results.map((r) => {
     const ac = typeof r.ac === "number" ? `AC ${r.ac}` : "AC unknown";
     const word = r.outcome === "crit" ? "critical hit" : r.outcome === "hit" ? "hit" : r.outcome === "miss" ? "miss" : "unknown";
     return `${word} on ${r.name} (${total} vs ${ac})`;
   });
-  return `${who}: ${parts.join("; ")}. ${decision.roll ? "Rolling damage." : "No damage rolled."}`;
+  return `${who}${cap(parts.join("; "))}. ${decision.roll ? "Rolling damage." : "No damage rolled."}`;
 }

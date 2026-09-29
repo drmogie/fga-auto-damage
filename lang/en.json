@@ -23,7 +23,11 @@
     },
     "ChatNote": {
       "Name": "Post a short hit or miss note",
-      "Hint": "Adds one small line in chat, like: hit on Foreman (19 vs AC 18)."
+      "Hint": "Adds one small line in chat, like: Hit on Foreman (19 vs AC 18)."
+    },
+    "ShowName": {
+      "Name": "Show the attacker name in the note",
+      "Hint": "Off by default. The chat message already shows who is speaking. Turn on to also put the name inside the note."
     }
   }
 }

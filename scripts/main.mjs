@@ -67,6 +67,15 @@ Hooks.once("init", () => {
     type: Boolean,
     default: true
   });
+
+  game.settings.register(ID, "showName", {
+    name: "FGA_AUTO_DAMAGE.ShowName.Name",
+    hint: "FGA_AUTO_DAMAGE.ShowName.Hint",
+    scope: "client",
+    config: true,
+    type: Boolean,
+    default: false
+  });
 });
 
 /** Read armor class for each targeted token. */
@@ -101,7 +110,7 @@ Hooks.on("dnd5e.postRollAttack", async (rolls, data) => {
     if (setting("chatNote")) {
       await ChatMessage.create({
         speaker: ChatMessage.getSpeaker({ actor: activity.actor }),
-        content: `<p><em>${esc(describe(decision, roll, activity.actor?.name))}</em></p>`,
+        content: `<p><em>${esc(describe(decision, roll, setting("showName") ? activity.actor?.name : ""))}</em></p>`,
         flags: { [ID]: { note: true } }
       });
     }

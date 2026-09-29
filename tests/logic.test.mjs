@@ -92,3 +92,9 @@ test("describe reads clearly", () => {
   const d = decide({ roll: r(15), targets: foreman, trigger: "hit", noTarget: "skip" });
   assert.equal(describe(d, r(15), "Bob"), "Bob: miss on Foreman (15 vs AC 18). No damage rolled.");
 });
+
+test("describe without a name has no prefix and starts with a capital", () => {
+  const d = decide({ roll: r(19), targets: foreman, trigger: "hit", noTarget: "skip" });
+  assert.equal(describe(d, r(19), ""), "Hit on Foreman (19 vs AC 18). Rolling damage.");
+  assert.equal(describe(d, r(19)), "Hit on Foreman (19 vs AC 18). Rolling damage.");
+});

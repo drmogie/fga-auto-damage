@@ -1,6 +1,6 @@
 # FGA Auto Damage
 
-Version: 2026.09.29.1
+Version: 2026.09.29.2
 
 Rolls damage for you right after an attack roll.
 Every player picks their own rules. Nothing is forced on the table.
@@ -27,6 +27,7 @@ These settings are per person. Each player sets their own.
   - A natural 20 always rolls damage.
 - Show the damage dialog: off by default, so damage rolls with no pop up.
 - Post a short hit or miss note: on by default.
+- Show the attacker name in the note: off by default. Chat already shows who is speaking.
 
 ## How to use it
 - Target a token first. Click it, then press T, or use the target tool.
@@ -51,6 +52,8 @@ The hit logic has its own tests. Run them with Node:
     node --test tests/logic.test.mjs
 
 ## Changelog
+### 2026.09.29.2
+- New option: show the attacker name in the hit or miss note. Off by default.
 ### 2026.09.29.1
 - Auto roll damage is now off by default. Each player turns it on.
 ### 2026.09.28.1
