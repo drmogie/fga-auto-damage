@@ -1,6 +1,6 @@
 # FGA Auto Damage
 
-Version: 2026.09.28.1
+Version: 2026.09.29.1
 
 Rolls damage for you right after an attack roll.
 Every player picks their own rules. Nothing is forced on the table.
@@ -16,7 +16,7 @@ Every player picks their own rules. Nothing is forced on the table.
 Open Game Settings, then Configure Settings, then FGA Auto Damage.
 These settings are per person. Each player sets their own.
 
-- Auto roll damage: on or off.
+- Auto roll damage: on or off (off by default).
 - When to roll damage:
   - When the attack hits (default)
   - Only on a critical hit
@@ -51,5 +51,7 @@ The hit logic has its own tests. Run them with Node:
     node --test tests/logic.test.mjs
 
 ## Changelog
-### 2026.09.28.1
+### 2026.09.29.1
+- Auto roll damage is now off by default. Each player turns it on.
+### 2026.09.29.1
 - First version.

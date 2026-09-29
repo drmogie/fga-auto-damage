@@ -2,7 +2,7 @@
   "id": "fga-auto-damage",
   "title": "FGA Auto Damage",
   "description": "Rolls damage for you right after an attack roll. Each player picks their own rules: on a hit, on a critical hit only, or always.",
-  "version": "2026.09.28.1",
+  "version": "2026.09.29.1",
   "authors": [
     {
       "name": "DrMogie"
