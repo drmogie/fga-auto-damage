@@ -53,5 +53,5 @@ The hit logic has its own tests. Run them with Node:
 ## Changelog
 ### 2026.09.29.1
 - Auto roll damage is now off by default. Each player turns it on.
-### 2026.09.29.1
+### 2026.09.28.1
 - First version.
