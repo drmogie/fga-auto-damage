@@ -1,6 +1,6 @@
 # FGA Auto Damage
 
-Version: 2026.09.29.2
+Version: 2026.09.29.03
 
 Rolls damage for you right after an attack roll.
 Every player picks their own rules. Nothing is forced on the table.
@@ -58,3 +58,10 @@ The hit logic has its own tests. Run them with Node:
 - Auto roll damage is now off by default. Each player turns it on.
 ### 2026.09.28.1
 - First version.
+
+## Install from GitHub
+
+In Foundry, open Add-on Modules, then Install Module.
+Paste this Manifest URL and click Install:
+
+`https://github.com/drmogie/fga-auto-damage/releases/latest/download/module.json`
